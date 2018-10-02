@@ -30,6 +30,18 @@ int lastinv;
 int lastrol;
 int lastpil;
 
+int open_frontend(unsigned int adapter, unsigned int frontend);
+void convert_freq(int lof, int *startfreq,
+                  int *endfreq, int * symrate, int * step);
+void blindscan (int startfreq, int endfreq, int symrate,
+	int step, unsigned int scan_v, unsigned int scan_h, int lof,
+	unsigned int interactive, int fec, unsigned int adapter,
+	unsigned int frontend, unsigned int verbose, int fefd, int delsys,
+	unsigned int monitor, unsigned int polarity, int retune,
+                unsigned int monitor_retune, int tone);
+void tune(int fefd, int tpfreq, int symrate, int polarity, int fec, int delsys, int tone);
+void getinfo(int fefd, int lof, unsigned int verbose);
+
 int main(int argc, char *argv[])
 {
 
